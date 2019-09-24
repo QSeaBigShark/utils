@@ -1,0 +1,32 @@
+data:
+ train_data: train_s
+ eval_data: valid_s
+ test_data: test_s
+ oot_data1:  oot5_s
+ oot_data2: None
+ data_path: /home/users/zhangji01.b/tx/data/hunhedata/v03/sample-n
+ data_type: 'csv'
+ useless: ['name', 'idcard', 'phone', 'loan_dt', 'uniq_id']
+ label_col: label
+
+model:
+ model_name: csvdata
+ model_path: /home/users/zhangji01.b/tx/data/hunhedata/v03/sample-n/model
+ num_round: 130
+ param: 
+  max_depth: 4
+  eta: 0.1
+  objective: 'binary:logistic'
+  lambda: 1.0
+  min_child_weight: 100
+  subsample: 0.8
+  col_sample_bytree: 0.9
+  nthread: 15
+  eval_metric: 'auc'
+  seed: 50
+  #n_gpus: -1
+  #gpu_id: 0
+  #max_bin: 16
+  #tree_method: 'gpu_hist'
+
+output: all #ks\auc\importance\all\none
